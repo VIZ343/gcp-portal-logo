@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GCP Portal — Logo Loop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="stage">
+        <div class="stage-card">
+          <svg
+            id="logoSvg"
+            class="logo-svg intro-play"
+            viewBox="0 0 1200 320"
+            role="img"
+            aria-label="Logo animado de GCP Portal"
+          >
+            <defs>
+              <linearGradient id="pieceLight" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#9aa8b9" />
+                <stop offset="100%" stop-color="#71829a" />
+              </linearGradient>
+              <linearGradient id="pieceDark" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#50637b" />
+                <stop offset="100%" stop-color="#2f4159" />
+              </linearGradient>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#98a7b7" />
+                <stop offset="100%" stop-color="#6a7d94" />
+              </linearGradient>
+              <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="3.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g class="logo-root" transform="translate(18 12)">
+              <g class="mark" transform="translate(0 0)">
+                <g class="mark-lines" stroke="url(#lineGrad)" stroke-width="3.2" stroke-linecap="round" fill="none">
+                  <path class="line v-line" d="M128 6 L128 250" pathLength="1" />
+                  <path class="line h-line" d="M4 128 L242 128" pathLength="1" />
+                  <path class="line d-line" d="M42 205 L188 59" pathLength="1" />
+                  <path class="line s-line" d="M162 104 L192 74" pathLength="1" />
+                </g>
+
+                <g class="mark-pieces" transform="translate(128 128)">
+                  <polygon class="piece piece-tl" points="0,0 -42,0 -42,-42 0,-42" fill="url(#pieceDark)" />
+                  <polygon class="piece piece-tr" points="0,0 30,-30 30,0 0,0" fill="url(#pieceLight)" />
+                  <polygon class="piece piece-bl" points="0,0 -30,30 -30,0 0,0" fill="url(#pieceLight)" />
+                  <polygon class="piece piece-br" points="0,0 42,0 42,42 0,42" fill="url(#pieceDark)" />
+                </g>
+
+                <g class="mark-center" transform="translate(128 128)">
+                  <circle class="center-pulse" r="5.5" fill="#4b5c74" opacity="0.75" />
+                  <circle class="center-ring" r="18" fill="none" stroke="#90a1b4" stroke-width="1.4" opacity="0" />
+                </g>
+              </g>
+
+              <g class="wording" transform="translate(275 12)">
+                <text class="title" x="0" y="100">GCP Portal</text>
+                <text class="subtitle" x="0" y="154">PROYECTOS QUE IMPULSAN</text>
+                <text class="subtitle" x="0" y="184">TERRITORIOS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="review-panel">
+          <div class="review-text">
+            <strong>Proyecto de revisión</strong>
+            <span>Entrada + loop interno cada 30s en el símbolo. El texto permanece estático tras la intro.</span>
+          </div>
+          <div class="review-actions">
+            <button id="replayIntro" type="button">Repetir entrada</button>
+            <button id="playLoop" type="button">Probar loop</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
